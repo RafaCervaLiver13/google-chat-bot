@@ -8,7 +8,7 @@ app.post("/", async (req, res) => {
   const message = req.body.message?.text || "";
 
   if (message.includes("deploy develop")) {
-    const githubToken =  ${{ secrets.PAT_TOKEN }};
+    const githubToken =  process.env.PAT_TOKEN;
     const repo = "RafaCervaLiver13/google-chat-bot ";
     const workflow = "myBag.yml";
 
